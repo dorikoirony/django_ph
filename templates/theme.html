@@ -14,7 +14,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Album example for Bootstrap</title>
+    <title>APP推荐网站</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/album/">
 
@@ -28,7 +28,7 @@
   <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="{% url '主页' %}">
-                <img src="{% static "login.png" %}" height=30 alt="登陆图标">
+                <img src="{% static 'login.png' %}" height=30 >
                 Product Hunt
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,6 +38,7 @@
                 <div class="navbar-nav ml-auto">
 
                     {% if user.is_authenticated %}
+                        <a class="nav-item nav-link" href="{% url '发布页面' %}">发布</a>
                         <a class="nav-item nav-link" href="Javascript:{document.getElementById('退出').submit()}">退出</a>
                         <form id='退出' method="POST" action="{% url '登出页面' %}">
                             {% csrf_token %}
@@ -60,10 +61,10 @@
     <footer class="text-muted">
       <div class="container">
         <p class="float-right">
-          <a href="#">Back to top</a>
+          <a href="#">回到顶部</a>
         </p>
-        <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-        <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
+        <p>这是个没有什么用的瞎捣鼓的网站!</p>
+        <p>新来的? <a href=" ">去看看主页吧</a> 或者去看看向导页面 <a href="../../">获取帮助</a>.</p>
       </div>
     </footer>
 

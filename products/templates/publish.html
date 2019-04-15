@@ -1,0 +1,38 @@
+{% extends 'theme.html' %}
+
+{% block content %}
+<h2 align='center'>发布新的app</h2>
+<div align='center'>
+    <form method="POST" action="{% url '发布页面' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        标题: 
+        <br>
+        <input value="请输入标题" type="text" name="标题">
+        <br>
+        <br>
+        介绍:
+        <br>  
+        <textarea name="介绍" cols="100" rows="10">输入介绍</textarea>
+        <br>
+        <br>
+        APP链接:
+        <br>
+        <input value="http://" type="text" name="APP链接">
+        <br>
+        <br>
+        APP图标:
+        <input type="file" name="APP图标">
+        <br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;全图:
+        <input type="file" name="大图">
+        <br>
+        <br>
+        {{错误}}
+        <br>
+        <br>
+        <input type="submit" class='btn btn-primary' value="发布">
+    </form>
+</div>
+{% endblock content %}
+    

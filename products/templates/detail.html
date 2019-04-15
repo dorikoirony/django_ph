@@ -1,29 +1,30 @@
 {% extends 'theme.html' %}
 {% block content %}
 <div class='container'>
-{% for product in products.all %}
     <div class='row'>
         <div class="card" style="width: 18rem;">
             <img src="{{product.image.url}}" class="card-img-top" alt="app大图">
         </div>
         <div class="col-md-8" style="padding-left:30px">
-            <h3><a href="products/{{product.id}}">{{product.title}}</a></h3>
+            <h3>
+                <a href="products/{{product.id}}">
+                    {{product.title}}
+                </a>
+            </h3>
             <br>
-            {{product.url}}
+            APP链接：{{product.url}}
             <br>
-            {{product.intro}}
+            简介：{{product.intro}}
             <br>
             <div class="card" style="width: 10rem;">
-                    <img src="{{product.icon.url}}" class="card-img-top" alt="app图标">
+                <img src="{{product.icon.url}}" class="card-img-top" alt="app图标">
             </div>
             <br>
-            {{product.pub_date}}
+            发布日期：{{product.pub_date}}
             <br>
-            {{product.vote}}
+            投票数：{{product.vote}}
             <br>
         </div>
     </div>
-{% endfor %}
 </div>
 {% endblock content %}
-    
